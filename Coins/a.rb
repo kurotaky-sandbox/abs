@@ -5,15 +5,11 @@ x = gets.chomp.to_i # 合計金額
 
 count = 0
 
-a_arr = [500] * a
-b_arr = [100] * b
-c_arr = [50] * c
-
-a_arr.each_with_index do |va, i|
-  b_arr.each_with_index do |vb, j|
-    c_arr.each_with_index do |vc, k|
-      p count
-      count = count + 1 if (va * i + vb * j + vc * k) == x
+for i in 0..a do
+  for j in 0..b do
+    for k in 0..c do
+      # p "#{i},#{j},#{k}"
+      count = count += 1 if (500 * i + 100 * j + 50 * k) == x
     end
   end
 end
