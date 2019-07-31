@@ -7,8 +7,10 @@ n.times do
   coordinate << gets.chomp.split(' ').map(&:to_i)
 end
 
+prev_x, prev_y = 0, 0
+
 coordinate.each do |co|
-  if co[1] > n || co[2] > n
+  if (co[1] + co[2] > co[0])
     puts 'No'
     exit
   end
@@ -23,5 +25,7 @@ coordinate.each do |co|
       exit
     end
   end
+  prev_x = co[1]
+  prev_y = co[2]
 end
 puts 'Yes'
