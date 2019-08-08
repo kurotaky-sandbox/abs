@@ -10,7 +10,7 @@ end
 prev_x, prev_y = 0, 0
 
 coordinate.each do |co|
-  if (co[1] + co[2] > co[0])
+  if ((prev_x + prev_y) - (co[1] + co[2])).abs > co[0]
     puts 'No'
     exit
   end
